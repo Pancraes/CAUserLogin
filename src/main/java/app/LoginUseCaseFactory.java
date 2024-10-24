@@ -36,7 +36,7 @@ public final class LoginUseCaseFactory {
             LoginUserDataAccessInterface userDataAccessObject) {
 
         final LoginController loginController = createLoginUseCase(viewManagerModel, loginViewModel,
-                                                                   loggedInViewModel, userDataAccessObject);
+                loggedInViewModel, userDataAccessObject);
         return new LoginView(loginViewModel, loginController);
 
     }
@@ -49,7 +49,7 @@ public final class LoginUseCaseFactory {
 
         // Notice how we pass this method's parameters to the Presenter.
         final LoginOutputBoundary loginOutputBoundary = new LoginPresenter(viewManagerModel,
-                                                                           loggedInViewModel, loginViewModel);
+                loggedInViewModel, loginViewModel);
         final LoginInputBoundary loginInteractor = new LoginInteractor(
                 userDataAccessObject, loginOutputBoundary);
 
