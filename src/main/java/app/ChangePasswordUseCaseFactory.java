@@ -35,7 +35,7 @@ public final class ChangePasswordUseCaseFactory {
             ChangePasswordUserDataAccessInterface userDataAccessObject) {
 
         final ChangePasswordController changePasswordController =
-                    createChangePasswordUseCase(viewManagerModel, loggedInViewModel, userDataAccessObject);
+                createChangePasswordUseCase(viewManagerModel, loggedInViewModel, userDataAccessObject);
         return new LoggedInView(loggedInViewModel, changePasswordController);
 
     }
@@ -47,7 +47,7 @@ public final class ChangePasswordUseCaseFactory {
 
         // Notice how we pass this method's parameters through to the Presenter.
         final ChangePasswordOutputBoundary changePasswordOutputBoundary = new LoggedInPresenter(viewManagerModel,
-                                                                                                loggedInViewModel);
+                loggedInViewModel);
 
         final UserFactory userFactory = new CommonUserFactory();
 
